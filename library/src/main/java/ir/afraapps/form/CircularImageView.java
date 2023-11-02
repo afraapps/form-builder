@@ -20,7 +20,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 /**
  * Created by Mikhael LOPEZ on 09/10/2015.
  */
-class CircularImageView extends AppCompatImageView {
+public class CircularImageView extends AppCompatImageView {
   private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 
   // Default Values

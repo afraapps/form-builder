@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:id="@+id/parent"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_gravity="center"
-              android:gravity="center_horizontal"
-              android:layoutDirection="ltr"
-              android:orientation="vertical"
-              app:layout_behavior="@string/bottom_sheet_behavior"
-              tools:ignore="RtlHardcoded">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/parent"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:layout_gravity="center"
+  android:gravity="center_horizontal"
+  android:layoutDirection="ltr"
+  android:orientation="vertical"
+  app:layout_behavior="@string/bottom_sheet_behavior"
+  tools:ignore="RtlHardcoded">
 
 
   <FrameLayout
@@ -30,9 +30,7 @@
       android:paddingRight="8dp"
       android:paddingBottom="16dp"
       android:textColor="@color/textColorLight"
-      android:textSize="19sp"
-      app:fontFamily="@font/sans_regular_fd"
-      />
+      android:textSize="20sp" />
 
   </FrameLayout>
 
@@ -49,7 +47,7 @@
       android:layout_marginRight="5dp"
       app:np_dividerColor="#aaaaaaaa"
       app:np_dividerThickness="1dp"
-      app:np_textSize="@dimen/font_size_large"/>
+      app:np_textSize="@dimen/font_size_large" />
 
     <ir.afraapps.view.numberpicker.NumberPicker
       android:id="@+id/nmbr_count_down_month"
@@ -58,7 +56,7 @@
       android:layout_marginRight="5dp"
       app:np_dividerColor="#aaaaaaaa"
       app:np_dividerThickness="1dp"
-      app:np_textSize="@dimen/font_size_large"/>
+      app:np_textSize="@dimen/font_size_large" />
 
     <ir.afraapps.view.numberpicker.NumberPicker
       android:id="@+id/nmbr_count_down_day"
@@ -66,7 +64,7 @@
       android:layout_height="wrap_content"
       app:np_dividerColor="#aaaaaaaa"
       app:np_dividerThickness="1dp"
-      app:np_textSize="@dimen/font_size_large"/>
+      app:np_textSize="@dimen/font_size_large" />
   </LinearLayout>
 
   <LinearLayout
@@ -86,9 +84,7 @@
       android:gravity="center"
       android:minWidth="72dp"
       android:padding="5dp"
-      android:text="@string/cancel"
-      app:fontFamily="@font/sans_medium_fd"
-      />
+      android:text="@string/cancel" />
 
     <TextView
       android:id="@+id/txt_dialog_date_done"
@@ -98,9 +94,7 @@
       android:gravity="center"
       android:minWidth="72dp"
       android:padding="5dp"
-      android:text="@string/field_select_label"
-      app:fontFamily="@font/sans_medium_fd"
-      />
+      android:text="@string/field_select_label" />
 
   </LinearLayout>
 

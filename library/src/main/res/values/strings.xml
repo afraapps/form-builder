@@ -26,4 +26,7 @@
   <string name="gender_male_label">مرد</string>
   <string name="gender_unknown_label">نامشخص</string>
 
+  <string name="ok">تایید</string>
+  <string name="cancel">لغو</string>
+
 </resources>

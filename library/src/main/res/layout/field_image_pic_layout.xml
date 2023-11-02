@@ -13,7 +13,7 @@
     android:layout_gravity="center"
     app:srcCompat="@drawable/ic_vector_add_photo" />
 
-  <ir.afraapps.gviews.CircularImageView
+  <ir.afraapps.form.CircularImageView
     android:id="@+id/imgPic"
     android:layout_width="64dp"
     android:layout_height="64dp"

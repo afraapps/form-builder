@@ -37,7 +37,6 @@
       android:minHeight="56dp"
       android:padding="8dp"
       android:importantForAutofill="no"
-      app:fontFamily="@font/sans_regular_fd"
       tools:ignore="LabelFor" />
 
     <androidx.appcompat.widget.AppCompatImageView

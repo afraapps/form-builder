@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:id="@+id/parent"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_gravity="center"
-              android:gravity="center"
-              android:layoutDirection="ltr"
-              android:orientation="vertical"
-              app:layout_behavior="@string/bottom_sheet_behavior"
-              tools:ignore="RtlHardcoded">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/parent"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_gravity="center"
+  android:gravity="center"
+  android:layoutDirection="ltr"
+  android:orientation="vertical"
+  app:layout_behavior="@string/bottom_sheet_behavior"
+  tools:ignore="RtlHardcoded">
 
   <TimePicker
     android:id="@+id/dialog_time_picker"
@@ -18,8 +18,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:layout_marginBottom="24dp"
-    android:timePickerMode="clock"
-    tools:targetApi="lollipop"/>
+    android:timePickerMode="spinner" />
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -39,8 +38,7 @@
       android:minWidth="92dp"
       android:minHeight="52dp"
       android:padding="5dp"
-      android:text="@string/cancel"
-      app:fontFamily="@font/sans_medium_fd"/>
+      android:text="@string/cancel" />
 
     <TextView
       android:id="@+id/txt_dialog_time_done"
@@ -51,8 +49,7 @@
       android:minWidth="92dp"
       android:minHeight="52dp"
       android:padding="5dp"
-      android:text="@string/field_select_label"
-      app:fontFamily="@font/sans_medium_fd"/>
+      android:text="@string/field_select_label" />
 
   </LinearLayout>
 

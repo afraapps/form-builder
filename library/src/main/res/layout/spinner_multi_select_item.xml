@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/parent"
@@ -24,7 +23,7 @@
     android:id="@+id/checkbox"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:buttonTint="@color/checkbox_color_state"/>
+    app:buttonTint="@color/checkbox_color_state" />
 
 
   <TextView
@@ -36,6 +35,6 @@
     android:paddingLeft="4dp"
     android:paddingRight="4dp"
     android:textColor="@color/checkbox_color_state"
-    android:textSize="15sp"/>
+    android:textSize="15sp" />
 
 </LinearLayout>
