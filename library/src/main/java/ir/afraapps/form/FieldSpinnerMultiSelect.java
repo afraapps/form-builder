@@ -18,7 +18,6 @@ import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import ir.afraapps.basic.helper.UMetric;
 
 
 public class FieldSpinnerMultiSelect extends FormLayout {
@@ -79,7 +78,8 @@ public class FieldSpinnerMultiSelect extends FormLayout {
       builder.setNegativeButton(null, null);
       LayoutInflater inflater = LayoutInflater.from(this.getContext());
       RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.recyclerview, null);
-      recyclerView.setPadding(0, 0, 0, UMetric.toDIP(38));
+      int padding = getContext().getResources().getDisplayMetrics().densityDpi * 38;
+      recyclerView.setPadding(0, 0, 0, padding);
       recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
       recyclerView.setItemAnimator(new DefaultItemAnimator());
       recyclerView.setAdapter(this.adapter);

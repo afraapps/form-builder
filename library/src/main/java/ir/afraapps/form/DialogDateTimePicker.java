@@ -14,7 +14,6 @@ import java.util.Calendar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
-import ir.afraapps.basic.helper.UText;
 import ir.afraapps.bcalendar.DayOutOfRangeException;
 import ir.afraapps.bcalendar.PersianDate;
 import ir.afraapps.view.numberpicker.NumberPicker;
@@ -113,7 +112,7 @@ public class DialogDateTimePicker extends SheetDialogBase implements View.OnClic
     String[] displayedValues = new String[range];
 
     for (int i = 0; i < range; ++i) {
-      displayedValues[i] = UText.formatNumber(this.minYear + i);
+      displayedValues[i] = this.minYear + i + "";
     }
 
     return displayedValues;
@@ -126,7 +125,7 @@ public class DialogDateTimePicker extends SheetDialogBase implements View.OnClic
     for (int i = 0; i < 12; ++i) {
       persianDate.setMonth(1 + i);
       persianDate.setDayOfMonth(1);
-      displayedValues[i] = UText.formatNumber(persianDate.getMonthName());
+      displayedValues[i] = persianDate.getMonthName();
     }
 
     return displayedValues;
@@ -137,7 +136,7 @@ public class DialogDateTimePicker extends SheetDialogBase implements View.OnClic
 
     for (int i = 0; i < maxDay; ++i) {
       int day = 1 + i;
-      displayedValues[i] = UText.formatNumber(day);
+      displayedValues[i] = day + "";
     }
 
     return displayedValues;

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import ir.afraapps.basic.helper.UView;
 
 
 public class FieldGenderPicker extends FormLayout {
@@ -67,17 +66,17 @@ public class FieldGenderPicker extends FormLayout {
     switch (gender) {
       case GENDER_UNKNOWN:
         this.viewUnknown.setSelected(true);
-        UView.selectViewChildes(this.viewUnknown, true);
+        Utils.selectChilds(this.viewUnknown, true);
         this.selectedView = this.viewUnknown;
         break;
       case GENDER_MALE:
         this.viewMale.setSelected(true);
-        UView.selectViewChildes(this.viewMale, true);
+        Utils.selectChilds(this.viewMale, true);
         this.selectedView = this.viewMale;
         break;
       case GENDER_FEMALE:
         this.viewFemale.setSelected(true);
-        UView.selectViewChildes(this.viewFemale, true);
+        Utils.selectChilds(this.viewFemale, true);
         this.selectedView = this.viewFemale;
     }
 
@@ -86,7 +85,7 @@ public class FieldGenderPicker extends FormLayout {
   private void resetSelectedView() {
     if (this.selectedView != null) {
       this.selectedView.setSelected(false);
-      UView.selectViewChildes(this.selectedView, false);
+      Utils.selectChilds(this.selectedView, false);
     }
 
   }

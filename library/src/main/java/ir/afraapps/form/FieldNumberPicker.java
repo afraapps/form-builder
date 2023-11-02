@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import ir.afraapps.basic.helper.UText;
-import ir.afraapps.basic.helper.UTypeface;
 import ir.afraapps.view.numberpicker.NumberPicker;
 
 
@@ -55,7 +53,6 @@ public class FieldNumberPicker extends FormLayout {
     LayoutInflater.from(context).inflate(R.layout.field_number_picker, this, true);
     this.txtTitle = this.findViewById(R.id.txt_title);
     this.numberPicker = this.findViewById(R.id.number_picker);
-    this.numberPicker.setTypeface(UTypeface.getSansLight());
   }
 
   private void prepareNumberPicker(int minValue, int maxValue) {
@@ -96,7 +93,7 @@ public class FieldNumberPicker extends FormLayout {
     String[] displayedValues = new String[range];
 
     for (int i = 0; i < range; ++i) {
-      displayedValues[i] = UText.formatNumber(min + i);
+      displayedValues[i] = min + i + "";
     }
 
     return displayedValues;
@@ -149,10 +146,10 @@ public class FieldNumberPicker extends FormLayout {
   private boolean isValidNumber() {
     int number = Integer.parseInt(this.getValue());
     if (this.getMin() > 0 && number < this.getMin()) {
-      this.setError(this.getContext().getString(R.string.field_number_invalid_max, UText.formatNumber(this.getMin())));
+      this.setError(this.getContext().getString(R.string.field_number_invalid_max, this.getMin() + ""));
       return false;
     } else if (this.getMax() > 0 && number > this.getMax()) {
-      this.setError(this.getContext().getString(R.string.field_number_invalid_max, UText.formatNumber(this.getMax())));
+      this.setError(this.getContext().getString(R.string.field_number_invalid_max, this.getMax() + ""));
       return false;
     } else {
       return true;

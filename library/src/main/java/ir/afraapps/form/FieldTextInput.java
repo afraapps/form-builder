@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -25,9 +26,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.graphics.drawable.DrawableCompat;
-import ir.afraapps.basic.helper.UColor;
-import ir.afraapps.basic.helper.UMetric;
-import ir.afraapps.basic.helper.UText;
 
 
 public class FieldTextInput extends FormLayout {
@@ -59,7 +57,8 @@ public class FieldTextInput extends FormLayout {
     if (attrs != null) {
       TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.FieldTextInput, defStyleAttr, 0);
       if (this.getFormTint() == null) {
-        this.setFormTint(ColorStateList.valueOf(UColor.getAccentColor()));
+        int defaultColor = Utils.getAttrColor(context, androidx.appcompat.R.attr.colorAccent, Color.BLACK);
+        this.setFormTint(ColorStateList.valueOf(defaultColor));
       }
 
       CharSequence hint = a.getText(R.styleable.FieldTextInput_android_hint);
@@ -406,7 +405,7 @@ public class FieldTextInput extends FormLayout {
       resid = R.drawable.bg_input_normal;
       if (!this.isInEditMode()) {
         LayoutParams params = (LayoutParams) this.txtError.getLayoutParams();
-        int margin = UMetric.toDIP(4);
+        int margin = getContext().getResources().getDisplayMetrics().densityDpi * 4;
         params.leftMargin = margin;
         params.rightMargin = margin;
         this.txtError.setLayoutParams(params);
@@ -485,10 +484,10 @@ public class FieldTextInput extends FormLayout {
   private boolean isValidText() {
     String text = this.getValue();
     if (this.getMin() > 0 && text.length() < this.getMin()) {
-      this.setError(this.getContext().getString(R.string.field_text_invalid_min, UText.formatNumber(this.getMin())));
+      this.setError(this.getContext().getString(R.string.field_text_invalid_min, this.getMin() + ""));
       return false;
     } else if (this.getMax() > 0 && text.length() > this.getMax()) {
-      this.setError(this.getContext().getString(R.string.field_text_invalid_max, UText.formatNumber(this.getMax())));
+      this.setError(this.getContext().getString(R.string.field_text_invalid_max, this.getMax() + ""));
       return false;
     } else {
       return true;
@@ -500,7 +499,7 @@ public class FieldTextInput extends FormLayout {
   }
 
   private boolean isValidEmail() {
-    boolean isValidEmail = UText.isValidEmail(this.getValue());
+    boolean isValidEmail = Utils.isEmail(this.getValue());
     if (!isValidEmail) {
       this.setError(this.getContext().getString(R.string.field_text_invalid_mail));
     }
@@ -509,7 +508,7 @@ public class FieldTextInput extends FormLayout {
   }
 
   private boolean isValidPhone() {
-    boolean isValidPhoneNumber = UText.isValidAllPhoneNumber(this.getValue());
+    boolean isValidPhoneNumber = Utils.isAllPhoneNumber(this.getValue());
     if (!isValidPhoneNumber) {
       this.setError(this.getContext().getString(R.string.field_number_invalid_phone));
     }
@@ -518,7 +517,7 @@ public class FieldTextInput extends FormLayout {
   }
 
   private boolean isValidMobile() {
-    boolean isValidMobile = UText.isValidMobileNumber(this.getValue());
+    boolean isValidMobile = Utils.isMobileNumber(this.getValue());
     if (!isValidMobile) {
       this.setError(this.getContext().getString(R.string.field_number_invalid_mobile));
     }
@@ -531,10 +530,10 @@ public class FieldTextInput extends FormLayout {
     if (value != null && TextUtils.isDigitsOnly(value)) {
       int number = Integer.parseInt(this.getValue());
       if (this.getMin() > 0 && number < this.getMin()) {
-        this.setError(this.getContext().getString(R.string.field_number_invalid_min, UText.formatNumber(this.getMin())));
+        this.setError(this.getContext().getString(R.string.field_number_invalid_min, this.getMin() + ""));
         return false;
       } else if (this.getMax() > 0 && number > this.getMax()) {
-        this.setError(this.getContext().getString(R.string.field_number_invalid_max, UText.formatNumber(this.getMax())));
+        this.setError(this.getContext().getString(R.string.field_number_invalid_max, this.getMax() + ""));
         return false;
       } else {
         return true;

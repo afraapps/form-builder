@@ -13,7 +13,6 @@ import java.io.File;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import ir.afraapps.gviews.CircularImageView;
 
 
 public class FieldImagePicker extends FieldContentPicker {

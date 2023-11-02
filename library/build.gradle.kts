@@ -95,6 +95,6 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
 
     implementation("com.github.sobhan-jabbari:jcalendar:1.2.7")
-    implementation("com.github.sobhan-jabbari:gviews:1.1.26")
     implementation("com.github.sobhan-jabbari:number-picker:1.1.26")
+
 }
