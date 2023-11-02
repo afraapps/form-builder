@@ -16,14 +16,15 @@ import java.util.regex.Pattern;
  */
 class Utils {
 
-  static void selectChilds(View view, boolean isSelected) {
-    if (view instanceof ViewGroup) {
-      ViewGroup viewGroup = (ViewGroup) view;
-      for (int i = 0; i < viewGroup.getChildCount(); i++) {
-        selectChilds(viewGroup.getChildAt(i), isSelected);
+  public static void selectChilds(ViewGroup viewGroup, boolean select) {
+    if (viewGroup == null) return;
+    int childCount = viewGroup.getChildCount();
+    for (int i = 0; i < childCount; i++) {
+      View child = viewGroup.getChildAt(i);
+      child.setSelected(select);
+      if (child instanceof ViewGroup) {
+        selectChilds((ViewGroup) child, select);
       }
-    } else {
-      view.setSelected(isSelected);
     }
   }
 
@@ -39,28 +40,28 @@ class Utils {
   }
 
 
-   static boolean isMobileNumber(String number) {
+  static boolean isMobileNumber(String number) {
     Pattern pattern = Pattern.compile("^(((\\+|00)98)|98|0)?9[01239]\\d{8}$");
     Matcher matcher = pattern.matcher(number);
     return matcher.matches();
   }
 
 
-   static boolean isAllPhoneNumber(String number) {
+  static boolean isAllPhoneNumber(String number) {
     Pattern pattern = Pattern.compile("^(((\\+|00)98)|98|0)?[1-9]\\d{9}$");
     Matcher matcher = pattern.matcher(number);
     return matcher.matches();
   }
 
 
-   static boolean isNationalCode(String number) {
+  static boolean isNationalCode(String number) {
     Pattern pattern = Pattern.compile("^\\d{10}$");
     Matcher matcher = pattern.matcher(number);
     return matcher.matches();
   }
 
 
-   static boolean isEmail(String email) {
+  static boolean isEmail(String email) {
     Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
     Matcher matcher = pattern.matcher(email);
     return matcher.matches();

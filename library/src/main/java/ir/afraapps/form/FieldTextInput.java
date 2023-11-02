@@ -405,7 +405,7 @@ public class FieldTextInput extends FormLayout {
       resid = R.drawable.bg_input_normal;
       if (!this.isInEditMode()) {
         LayoutParams params = (LayoutParams) this.txtError.getLayoutParams();
-        int margin = getContext().getResources().getDisplayMetrics().densityDpi * 4;
+        int margin = (int) (getContext().getResources().getDisplayMetrics().density * 4);
         params.leftMargin = margin;
         params.rightMargin = margin;
         this.txtError.setLayoutParams(params);

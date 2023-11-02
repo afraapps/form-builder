@@ -78,7 +78,7 @@ public class FieldSpinnerMultiSelect extends FormLayout {
       builder.setNegativeButton(null, null);
       LayoutInflater inflater = LayoutInflater.from(this.getContext());
       RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.recyclerview, null);
-      int padding = getContext().getResources().getDisplayMetrics().densityDpi * 38;
+      int padding = (int) (getContext().getResources().getDisplayMetrics().density * 38);
       recyclerView.setPadding(0, 0, 0, padding);
       recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
       recyclerView.setItemAnimator(new DefaultItemAnimator());
